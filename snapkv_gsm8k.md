@@ -12,3 +12,6 @@
 | HashEvict | 50 | 0.8468 | 0.8582 | 0.8524 | 0.3495 | 0.1556 | 0.2658 | 0.3188 | 2.9000 | 4.7400 | 4.2300 | 4.0900 | 0.6333 | 0.0113 | 2021.0625 | 18.5694 |
 | HashEvict | 70 | 0.8470 | 0.8626 | 0.8547 | 0.3723 | 0.1741 | 0.2797 | 0.3418 | 2.9500 | 4.7800 | 4.3600 | 4.1300 | 0.4740 | 0.0164 | 2090.5373 | 18.7375 |
 | HashEvict | 90 | 0.8485 | 0.8626 | 0.8554 | 0.3762 | 0.1768 | 0.2847 | 0.3439 | 3.0400 | 4.8000 | 4.4000 | 4.2000 | 0.3453 | 0.0205 | 1209.8592 | 15.4836 |
+
+### Experiment Setup:
+We setup SnapKV to compress the prompt only: the generated tokens do not cause any token eviction even if the cache budget is reached. We used a kernel size of 5 and observation window length of 16 (please see page 7 of https://arxiv.org/abs/2404.14469 for the effect of these hyperparameters). We set the compressed size of the KV cache of both SnapKV and HashEvict to be **cache budget * (median prompt length + allowed number of generated tokens)**. HashEvict will pick a token to evict if the cache size limit is reached. SnapKV compresses the prompt to fit inside the cache size limit, and during decoding it appends the generated token to kv cache and is allowed to exceed this limit. The experiments were conducted on Nvidia RTX-A6000 GPUs with 48GB of GPU Memory. 
