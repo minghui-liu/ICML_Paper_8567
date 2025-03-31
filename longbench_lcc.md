@@ -1,6 +1,6 @@
 ###  Performance of Longbench LCC
 
-| Strategy | Cache Budget (%) | Fuzzy Match Score | Avg Compression Ratio | Cache Mem (GB) | Decode Toks Per Sec Top 10% | Prefill Toks Per Sec Top 10% |
+| Strategy | Cache Budget / Attention Recovery for FastGen (%) | Fuzzy Match Score | Avg Compression Ratio | Cache Mem (GB) | Decode Toks Per Sec Top 10% | Prefill Toks Per Sec Top 10% |
 |---|---|---|---|---|---|---|
 | Full | 100% | 17.49 | 0.0000 | 1.6910 | 16.2247 | 16025.5020 |
 | L2 | 10% | 14.25 | 0.9037 | 0.0297 | 27.1056 | 15413.2112 |
