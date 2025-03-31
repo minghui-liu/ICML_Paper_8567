@@ -1,6 +1,6 @@
 ###  Performance of Longbench LCC
 
-| Strategy | Cache Budget / Attention Recovery for FastGen (%) | Fuzzy Match Score | Avg Compression Ratio | Cache Mem (GB) | Decode Toks Per Sec Top 10% | Prefill Toks Per Sec Top 10% |
+| Strategy | Cache Budget (%) | Fuzzy Match Score | Avg Compression Ratio | Cache Mem (GB) | Decode Toks Per Sec Top 10% | Prefill Toks Per Sec Top 10% |
 |---|---|---|---|---|---|---|
 | Full | 100% | 17.49 | 0.0000 | 1.6910 | 16.2247 | 16025.5020 |
 | L2 | 10% | 14.25 | 0.9037 | 0.0297 | 27.1056 | 15413.2112 |
@@ -23,8 +23,8 @@
 | H2O | 50% | 17.31 | 0.5280 | 0.1483 | 24.9113 | 9583.9830 |
 | H2O | 70% | 17.3 | 0.3505 | 0.2068 | 24.3220 | 9626.7575 |
 | H2O | 90% | 17.38 | 0.2222 | 0.2664 | 24.7619 | 9834.0535 |
-| FastGen | 70% | 17.17 | 0.5307 | 4.3575 | 13.3479 | 1109.0816 |
-| FastGen | 75% | 16.91 | 0.4206 | 4.3575 | 13.5296 | 1122.5225 |
-| FastGen | 80% | 17.49 | 0.3108 | 4.3575 | 13.8139 | 1148.6746 |
-| FastGen | 85% | 17.58 | 0.1925 | 4.3575 | 13.5166 | 1121.0682 |
-| FastGen | 90% | 17.42 | 0.1019 | 4.3575 | 13.4661 | 1146.9983 |
+| FastGen | 70% Attn Recovery | 17.17 | 0.5307 | 4.3575 | 13.3479 | 1109.0816 |
+| FastGen | 75% Attn Recovery | 16.91 | 0.4206 | 4.3575 | 13.5296 | 1122.5225 |
+| FastGen | 80% Attn Recovery | 17.49 | 0.3108 | 4.3575 | 13.8139 | 1148.6746 |
+| FastGen | 85% Attn Recovery | 17.58 | 0.1925 | 4.3575 | 13.5166 | 1121.0682 |
+| FastGen | 90% Attn Recovery | 17.42 | 0.1019 | 4.3575 | 13.4661 | 1146.9983 |
